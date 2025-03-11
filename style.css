@@ -1,0 +1,212 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://via.placeholder.com/1200x800') no-repeat center center fixed; /* Ảnh nền */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    backdrop-filter: blur(10px); /* Hiệu ứng blur cho nền */
+  }
+  
+  /* Wrapper */
+  .wrapper {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.8); /* Nền trong suốt */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    backdrop-filter: blur(15px); /* Áp dụng hiệu ứng blur */
+  }
+  
+  /* Header styles */
+  #form-content h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #777; /* Màu mặc định cho các tiêu đề */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  #form-content h2.active {
+    color: #28a745; /* Màu xanh lá khi trang tương ứng được chọn */
+  }
+  
+  #form-content h2.inactive:hover {
+    color: #66c672; /* Màu xanh lá đậm khi hover */
+  }
+  
+  #form-content h2.active:hover {
+    color: #218838; /* Màu xanh lá tối khi hover */
+  }
+  
+  /* Avatar Image */
+  #avatar {
+    display: block;
+    margin: 0 auto 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #28a745; /* Viền xanh lá */
+    transition: transform 0.3s ease;
+  }
+  
+  #avatar:hover {
+    transform: scale(1.1); /* Tăng kích thước avatar khi hover */
+  }
+  
+  /* Form input styles */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #66c672; /* Viền xanh lá nhạt */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f4f4f4; /* Nền xám nhạt */
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #28a745; /* Viền xanh lá sáng khi focus */
+    background-color: #fff;
+    outline: none;
+  }
+  
+  /* Submit button */
+  input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #28a745; /* Màu xanh lá sáng cho nền */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #66c672; /* Xanh lá đậm khi hover */
+    transform: translateY(-3px); /* Nâng nút lên khi hover */
+  }
+  
+  input[type="submit"]:active {
+    background-color: #218838; /* Xanh lá tối khi click */
+    transform: translateY(1px); /* Hạ nút xuống khi click */
+  }
+  
+  /* Error and success message styles */
+  .error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: -8px;
+    margin-bottom: 12px;
+  }
+  
+  .success {
+    color: #2ecc71;
+    font-size: 1rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Footer Styles */
+  #form-footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  #form-footer .underline-hover {
+    color: #28a745; /* Màu xanh lá sáng cho link */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  #form-footer .underline-hover:hover {
+    color: #66c672; /* Màu xanh lá đậm khi hover */
+    text-decoration: underline;
+  }
+  
+  /* Animation delays for the inputs */
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+  }
+  
+  .fade-in.first {
+    animation-delay: 0.1s;
+  }
+  
+  .fade-in.second {
+    animation-delay: 0.3s;
+  }
+  
+  .fade-in.third {
+    animation-delay: 0.5s;
+  }
+  
+  .fade-in.fourth {
+    animation-delay: 0.7s;
+  }
+  
+  .fade-in.five {
+    animation-delay: 0.9s;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: 30px 20px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wrapper {
+      max-width: 100%;
+      padding: 20px;
+    }
+  
+    #avatar {
+      width: 60px;
+      height: 60px;
+    }
+  
+    input[type="submit"] {
+      font-size: 1rem;
+    }
+  }
+  
